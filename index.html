@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#05090c"
+  >
+
+  <title>Flores amarillas</title>
+
+  <link
+    rel="stylesheet"
+    href="css/styles.css"
+  >
+</head>
+
+<body>
+
+  <main
+    class="experience"
+    id="experience"
+  >
+
+    <!-- Fondo -->
+    <div
+      class="night-sky"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="stars"
+      id="stars"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="particles"
+      id="particles"
+      aria-hidden="true"
+    ></div>
+
+
+    <!-- Pantalla inicial -->
+    <section
+      class="intro"
+      id="intro"
+      role="button"
+      tabindex="0"
+      aria-label="Comenzar regalo"
+    >
+
+      <div class="intro-glow"></div>
+
+      <p class="intro-kicker">
+        Un pequeño detalle
+      </p>
+
+      <h1 id="introMessage">
+        Hay algo para ti 💛
+      </h1>
+
+      <p class="tap">
+        <span>✦</span>
+        Toca para comenzar
+        <span>✦</span>
+      </p>
+
+    </section>
+
+
+    <!-- Título -->
+    <header
+      class="heading"
+      id="heading"
+    >
+
+      <p class="eyebrow">
+        Para
+        <span id="recipient">
+          Mi Gigi💕
+        </span>
+      </p>
+
+      <h2 id="mainTitle">
+        Feliz día de las flores amarillas
+      </h2>
+
+      <p id="subtitle">
+        Ten tu ramo bonito
+      </p>
+
+    </header>
+
+
+    <!-- Jardín -->
+    <section
+      class="garden"
+      aria-label="Ramo de girasoles animado"
+    >
+
+      <div
+        class="ground-glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- Ramo -->
+      <svg
+        class="bouquet"
+        id="bouquet"
+        viewBox="0 0 390 600"
+        role="img"
+        aria-label="Ramo de girasoles"
+      >
+
+        <defs>
+
+          <!-- Envoltura -->
+          <linearGradient
+            id="wrap"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1"
+          >
+
+            <stop
+              offset="0"
+              stop-color="#ffd6ec"
+              stop-opacity=".92"
+            />
+
+            <stop
+              offset=".48"
+              stop-color="#b864a9"
+              stop-opacity=".86"
+            />
+
+            <stop
+              offset="1"
+              stop-color="#4c276c"
+              stop-opacity=".9"
+            />
+
+          </linearGradient>
+
+
+          <linearGradient
+            id="wrapLight"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1"
+          >
+
+            <stop
+              stop-color="#fff1fa"
+              stop-opacity=".8"
+            />
+
+            <stop
+              offset="1"
+              stop-color="#ee8bc3"
+              stop-opacity=".25"
+            />
+
+          </linearGradient>
+
+
+          <linearGradient id="stemGreen" x1="0" y1="0" x2="1" y2="0">
+            <stop stop-color="#123d2a"/>
+            <stop offset=".45" stop-color="#2f9855"/>
+            <stop offset=".72" stop-color="#63c766"/>
+            <stop offset="1" stop-color="#1b5a35"/>
+          </linearGradient>
+
+          <linearGradient id="leafGreen" x1="0" y1="1" x2="1" y2="0">
+            <stop stop-color="#123d2a"/>
+            <stop offset=".48" stop-color="#23864a"/>
+            <stop offset="1" stop-color="#69ca62"/>
+          </linearGradient>
+
+          <linearGradient id="paperCream" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#fff9ef" stop-opacity=".96"/>
+            <stop offset=".48" stop-color="#f7cfe4" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#bc679f" stop-opacity=".94"/>
+          </linearGradient>
+
+          <linearGradient id="ribbonGold" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#fff2a5"/>
+            <stop offset=".48" stop-color="#e7b837"/>
+            <stop offset="1" stop-color="#b67512"/>
+          </linearGradient>
+
+
+          <!-- Brillo -->
+          <filter
+            id="softGlow"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
+
+            <feGaussianBlur
+              stdDeviation="4"
+              result="b"
+            />
+
+            <feMerge>
+
+              <feMergeNode in="b"/>
+
+              <feMergeNode
+                in="SourceGraphic"
+              />
+
+            </feMerge>
+
+          </filter>
+
+
+          <!-- Sombra flores -->
+          <filter
+            id="flowerShadow"
+            x="-40%"
+            y="-40%"
+            width="180%"
+            height="180%"
+          >
+
+            <feDropShadow
+              dx="0"
+              dy="4"
+              stdDeviation="5"
+              flood-color="#000"
+              flood-opacity=".55"
+            />
+
+          </filter>
+
+        </defs>
+
+
+        <!-- Tallos -->
+        <g
+          class="stems"
+          id="stems"
+        ></g>
+
+
+        <!-- Hojas -->
+        <g
+          class="leaves"
+          id="leaves"
+        ></g>
+
+
+
+
+
+        <!-- Parte trasera envoltura -->
+        <g class="wrap-back">
+
+          <path class="paper-shadow" d="M54 344 L157 382 L195 574 L93 506 Z"/>
+          <path class="paper-shadow" d="M336 340 L233 382 L195 574 L298 505 Z"/>
+
+          <path
+            d="M75 360 L163 397 L195 566 L113 510 Z"
+          />
+
+          <path
+            d="M315 355 L227 398 L195 566 L277 506 Z"
+          />
+
+        </g>
+
+
+        <!-- FLORES -->
+        <g
+          class="flowers"
+          id="flowers"
+        ></g>
+
+
+        <!-- Parte frontal envoltura -->
+        <g class="wrap-front">
+
+          <path class="inner-paper" d="M88 393 Q195 432 302 393 L263 566 L195 593 L127 566 Z"/>
+
+          <path
+            d="M104 407 Q195 438 286 407 L255 562 L195 586 L135 562 Z"
+            fill="url(#wrap)"
+          />
+
+          <path
+            d="M104 407 L195 586 L135 562 Z"
+            fill="url(#wrapLight)"
+            opacity=".58"
+          />
+
+          <path
+            d="M286 407 L195 586 L255 562 Z"
+            fill="#d77ab4"
+            opacity=".4"
+          />
+
+          <path
+            d="M122 432 Q195 471 268 432"
+            fill="none"
+            stroke="#ffe0ef"
+            stroke-opacity=".46"
+            stroke-width="3"
+          />
+
+          <path class="paper-seam" d="M112 426 L195 578 M278 426 L195 578 M139 443 Q195 467 251 443"/>
+          <path class="ribbon-band" d="M128 446 Q195 467 262 446 L255 477 Q195 492 135 476 Z"/>
+
+
+          <!-- Moño -->
+          <g class="bow">
+
+            <path
+              d="M195 447 C158 423 137 438 152 466 C166 487 191 463 195 452Z"
+            />
+
+            <path
+              d="M195 447 C232 423 253 438 238 466 C224 487 199 463 195 452Z"
+            />
+
+            <circle
+              cx="195"
+              cy="451"
+              r="11"
+            />
+
+            <path
+              d="M186 460 l-24 66 33-35 9 46 13-78z"
+            />
+
+          </g>
+
+        </g>
+
+      </svg>
+
+
+
+
+    </section>
+
+
+    <!-- Sonido -->
+    <button
+      class="sound"
+      id="soundButton"
+      aria-label="Silenciar música"
+      title="Música"
+    >
+      🔊
+    </button>
+
+
+    <!-- Botón carta -->
+    <button
+      class="envelope-cta"
+      id="envelopeCta"
+      aria-label="Abrir la carta"
+    >
+
+      <span class="mini-envelope">
+        <i></i>
+      </span>
+
+      <b>
+        Toca aquí
+      </b>
+
+      <small>
+        Hay una carta para ti
+      </small>
+
+    </button>
+
+
+    <!-- Carta -->
+    <section
+      class="letter-modal"
+      id="letterModal"
+      aria-hidden="true"
+      inert
+    >
+
+      <button
+        class="close-letter"
+        id="closeLetter"
+        aria-label="Cerrar carta"
+      >
+        ×
+      </button>
+
+
+      <div
+        class="envelope"
+        id="envelope"
+      >
+
+        <div class="envelope-back"></div>
+
+
+        <article class="letter">
+
+          <div
+            class="letter-art"
+            aria-hidden="true"
+          >
+
+            <span class="cat">
+              ♡
+            </span>
+
+            <span class="heart">
+              ♥
+            </span>
+
+            <span class="cat">
+              ♡
+            </span>
+
+          </div>
+
+
+          <p class="letter-small">
+            Con mucho cariño
+          </p>
+
+
+          <h3>
+            I LOVE YOU!
+            <span>💛</span>
+          </h3>
+
+
+          <p id="letterText">Dicen que regalar flores amarillas significa que esa persona ilumina tus días... pero si te soy sincero, esto es más bien una pequeña indirecta para recordarte lo mucho que me encantas y que no sales de mi cabeza. ¿Aceptas la indirecta? 🙈💗</p>
+
+
+          <p class="signature">
+            — Para
+            <span id="signatureName">
+              Gigi💕
+            </span>
+          </p>
+
+          <p class="kiss-mark" aria-hidden="true">
+            💋 <span>❤️</span>
+          </p>
+
+        </article>
+
+
+        <div class="envelope-front"></div>
+
+        <div class="envelope-flap"></div>
+
+        <p class="tap-prompt" id="tapPrompt">
+          <span>✦</span>
+          Toca para ver la carta
+          <span>✦</span>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div
+      class="sr-only"
+      id="finalMessage"
+      aria-live="polite"
+    ></div>
+
+
+    <audio
+      id="music"
+      loop
+      preload="auto"
+    ></audio>
+
+  </main>
+
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
